@@ -20,32 +20,30 @@ int alive_or_dead(Point p, short field[SIZE][SIZE]){
 }
 /////////////////////////////////////////////////////////
 int clipped_live_neighbors(Point p, short field[SIZE][SIZE]){
-    int max_neighbors = MAX_NEIGHBORS - 3; // 5
-    int neighbors[5] = {0};
-    int limit = SIZE - 1;
+    int neighbors[CLIPPED_NEIGHBORS] = {0};
     int alive = 0;
-    if(p.row == 0 && p.col != 0 && p.col != limit){
+    if(p.row == 0 && p.col != 0 && p.col != LIMIT){
         neighbors[0] = field[p.row + 1][p.col];
         neighbors[1] = field[p.row + 1][p.col + 1];
         neighbors[2] = field[p.row + 1][p.col - 1];
         neighbors[3] = field[p.row][p.col + 1];
         neighbors[4] = field[p.row][p.col - 1];       
     } 
-    else if(p.row == limit && p.col != 0 && p.col != limit){
+    else if(p.row == LIMIT && p.col != 0 && p.col != LIMIT){
         neighbors[0] = field[p.row - 1][p.col];
         neighbors[1] = field[p.row - 1][p.col + 1];
         neighbors[2] = field[p.row - 1][p.col - 1];
         neighbors[3] = field[p.row][p.col + 1];
         neighbors[4] = field[p.row][p.col - 1];  
     }
-    else if(p.col == 0 && p.row != 0 && p.row != limit){
+    else if(p.col == 0 && p.row != 0 && p.row != LIMIT){
         neighbors[0] = field[p.row + 1][p.col];
         neighbors[1] = field[p.row - 1][p.col];
         neighbors[2] = field[p.row + 1][p.col + 1];
         neighbors[3] = field[p.row - 1][p.col + 1];
         neighbors[4] = field[p.row][p.col + 1];  
     }
-    else if(p.col == limit && p.row != 0 && p.row != limit){
+    else if(p.col == LIMIT && p.row != 0 && p.row != LIMIT){
         neighbors[0] = field[p.row + 1][p.col];
         neighbors[1] = field[p.row - 1][p.col];
         neighbors[2] = field[p.row + 1][p.col - 1];
@@ -57,17 +55,92 @@ int clipped_live_neighbors(Point p, short field[SIZE][SIZE]){
         neighbors[1] = field[p.row + 1][p.col];
         neighbors[2] = field[p.row + 1][p.col + 1];
     }
-    else if(p.col == limit && p.row == 0){
+    else if(p.col == LIMIT && p.row == 0){
         neighbors[0] = field[p.row + 1][p.col];
         neighbors[1] = field[p.row][p.col - 1];
         neighbors[2] = field[p.row + 1][p.col - 1];
     }
-    else if(p.col == 0 && p.row == limit){
+    else if(p.col == 0 && p.row == LIMIT){
         neighbors[0] = field[p.row - 1][p.col];
         neighbors[1] = field[p.row][p.col + 1];
         neighbors[2] = field[p.row - 1][p.col + 1];
     }
-    else if(p.col == limit && p.row == limit){
+    else if(p.col == LIMIT && p.row == LIMIT){
+        neighbors[0] = field[p.row][p.col - 1];
+        neighbors[1] = field[p.row - 1][p.col];
+        neighbors[2] = field[p.row - 1][p.col - 1];
+    }
+    for(int i = 0; i < CLIPPED_NEIGHBORS; i++)
+        if(neighbors[i]) alive++;
+    return alive;
+}
+
+//Complete
+int circular_live_neighbors(Point p, short field[SIZE][SIZE]){
+    int neighbors[MAX_NEIGHBORS] = {0};
+    int alive = 0;
+    if(p.row == 0 && p.col != 0 && p.col != LIMIT){
+        neighbors[0] = field[p.row + 1][p.col];
+        neighbors[1] = field[p.row + 1][p.col + 1];
+        neighbors[2] = field[p.row + 1][p.col - 1];
+        neighbors[3] = field[p.row][p.col + 1];
+        neighbors[4] = field[p.row][p.col - 1];       
+        neighbors[5] = field[LIMIT][p.col - 1];       
+        neighbors[6] = field[LIMIT][p.col];       
+        neighbors[7] = field[LIMIT][p.col + 1];       
+    } 
+    else if(p.row == LIMIT && p.col != 0 && p.col != LIMIT){
+        neighbors[0] = field[p.row - 1][p.col];
+        neighbors[1] = field[p.row - 1][p.col + 1];
+        neighbors[2] = field[p.row - 1][p.col - 1];
+        neighbors[3] = field[p.row][p.col + 1];
+        neighbors[4] = field[p.row][p.col - 1];
+        neighbors[5] = field[0][p.col - 1];       
+        neighbors[6] = field[0][p.col];       
+        neighbors[7] = field[0][p.col + 1];    
+    }
+    else if(p.col == 0 && p.row != 0 && p.row != LIMIT){
+        neighbors[0] = field[p.row + 1][p.col];
+        neighbors[1] = field[p.row - 1][p.col];
+        neighbors[2] = field[p.row + 1][p.col + 1];
+        neighbors[3] = field[p.row - 1][p.col + 1];
+        neighbors[4] = field[p.row][p.col + 1];  
+        neighbors[5] = field[p.row][LIMIT];       
+        neighbors[6] = field[p.row + 1][LIMIT];       
+        neighbors[7] = field[p.row - 1][LIMIT];  
+    }
+    else if(p.col == LIMIT && p.row != 0 && p.row != LIMIT){
+        neighbors[0] = field[p.row + 1][p.col];
+        neighbors[1] = field[p.row - 1][p.col];
+        neighbors[2] = field[p.row + 1][p.col - 1];
+        neighbors[3] = field[p.row - 1][p.col - 1];
+        neighbors[4] = field[p.row][p.col - 1];  
+        neighbors[5] = field[p.row][0];       
+        neighbors[6] = field[p.row + 1][0];       
+        neighbors[7] = field[p.row - 1][0];  
+    }
+    else if(p.col == 0 && p.row == 0){
+        neighbors[0] = field[p.row][p.col + 1];
+        neighbors[1] = field[p.row + 1][p.col];
+        neighbors[2] = field[p.row + 1][p.col + 1];
+
+        neighbors[3] = field[p.row + 1][p.col + 1];
+        neighbors[4] = field[p.row + 1][p.col + 1];
+        neighbors[5] = field[LIMIT][LIMIT];       
+        neighbors[6] = field[LIMIT + 1][LIMIT];       
+        neighbors[7] = field[LIMIT][LIMIT - 1];  
+    }
+    else if(p.col == LIMIT && p.row == 0){
+        neighbors[0] = field[p.row + 1][p.col];
+        neighbors[1] = field[p.row][p.col - 1];
+        neighbors[2] = field[p.row + 1][p.col - 1];
+    }
+    else if(p.col == 0 && p.row == LIMIT){
+        neighbors[0] = field[p.row - 1][p.col];
+        neighbors[1] = field[p.row][p.col + 1];
+        neighbors[2] = field[p.row - 1][p.col + 1];
+    }
+    else if(p.col == LIMIT && p.row == LIMIT){
         neighbors[0] = field[p.row][p.col - 1];
         neighbors[1] = field[p.row - 1][p.col];
         neighbors[2] = field[p.row - 1][p.col - 1];
@@ -85,7 +158,7 @@ int is_critical(Point p){
 
 int live_neighbors(Point p, short field[SIZE][SIZE]){
     int alive = 0;
-    if(is_critical)
+    if(is_critical(p))
         alive = clipped_live_neighbors(p,field);
     else{
         int neighbors[] = {
@@ -105,16 +178,15 @@ int live_neighbors(Point p, short field[SIZE][SIZE]){
     return alive;
 }
 
-int shouldDie(Point p, short field[SIZE][SIZE]){
-    if(!alive_or_dead(p,field)) return 1;
+
+
+
+
+
+int live_or_die(Point p, short field[SIZE][SIZE]){
     int live_nghbrs = live_neighbors(p, field);
-    return live_nghbrs > 3 || live_nghbrs < 2;
+    if(field[p.row][p.col])
+        return live_nghbrs == 3 || live_nghbrs == 2;  
+    else
+        return live_nghbrs == 3;
 }
-
-int shouldLive(Point p, short field[SIZE][SIZE]){
-    if(alive_or_dead(p,field)) return 0;
-    return live_neighbors(p, field) == 3;
-}
-
-
-
