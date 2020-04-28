@@ -7,4 +7,5 @@ void change_state(Point p, short field[SIZE][SIZE]);
 void initialize_field(short field[SIZE][SIZE]);
 void print_field(short field[SIZE][SIZE]);
 
+
 #endif
