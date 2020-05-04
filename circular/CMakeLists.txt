@@ -12,3 +12,6 @@ target_include_directories(circular INTERFACE ${CMAKE_CURRENT_SOURCE_DIR})
 target_link_libraries(circular PUBLIC game)
 
 
+target_compile_options(circular PUBLIC "--coverage")
+target_link_options(circular PUBLIC "--coverage")
+

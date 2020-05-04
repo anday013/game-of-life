@@ -9,9 +9,9 @@ void start_game(int stages, short field[SIZE][SIZE], int version)
 {
     for (int i = 0; i < stages; i++)
     {
-        printf("Stage %d: \n\n", i);
-        print_field(field);
-        printf("-----------------------------------\n");
+        // printf("Stage %d: \n\n", i);
+        draw_field(field);
+        // printf("-----------------------------------\n");
         next_stage(field, version);
     }
 }

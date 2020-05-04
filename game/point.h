@@ -20,6 +20,7 @@ struct Point
 #include "clipped.h"
 Point create_point(int row, int col);
 int check_point(Point p, int rows, int cols);
+int is_critical(Point p);
 int live_neighbors(Point p, short field[SIZE][SIZE], int version);
 int alive_or_dead(Point p, short field[SIZE][SIZE]);    // alive - 1 dead - 0
 int live_or_die(Point p, short field[SIZE][SIZE], int version);
