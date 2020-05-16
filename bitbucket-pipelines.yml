@@ -1,0 +1,23 @@
+image: sylv1thery/imgdev
+pipelines:
+  default:
+    - step:
+        name: building
+        script: 
+        - mkdir BuildCI
+        - cd BuildCI
+        - cmake ..
+        - cmake --build . --target test_pract1
+        artifacts:
+        - BuildCI/**
+    - step:
+        name: testing
+        script: 
+        - cd BuildCI
+        - ctest -V
+    - step:
+        name: coverage
+        script:
+        - cd BuildCI
+        - mkdir Coverage
+        - cmake --build . --target cover_h

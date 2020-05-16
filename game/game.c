@@ -7,13 +7,19 @@ void change_state(Point p, short field[SIZE][SIZE])
 
 void start_game(int stages, short field[SIZE][SIZE], int version)
 {
-    for (int i = 0; i < stages; i++)
-    {
-        // printf("Stage %d: \n\n", i);
-        draw_field(field);
-        // printf("-----------------------------------\n");
-        next_stage(field, version);
-    }
+    if (stages != 0)
+        while (stages != 0)
+        {
+            draw_field(field);
+            next_stage(field, version);
+            stages--;
+        }
+    else
+        while (1)
+        {
+            draw_field(field);
+            next_stage(field, version);
+        }
 }
 
 void kill(Point p, short field[SIZE][SIZE])
