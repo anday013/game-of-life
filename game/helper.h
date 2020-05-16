@@ -7,11 +7,11 @@
 
 #define FAIL_IF_MSG(EXP, MSG) ({if(EXP){printf(MSG "\n"); exit(EXIT_FAILURE);} })
 
-void argument_checker(int args, char **argv);
-int get_version(int args, char **argv);
-int get_stages(int args, char **argv);
-void initialize_field(short field[SIZE][SIZE]);
-void locate_points(Point points[], int size, short field[SIZE][SIZE]);
-int copy_field(short src_field[SIZE][SIZE], short new_field[SIZE][SIZE]);
+int get_game_type();
+int get_version();
+int get_stages();
+void initialize_field(short field[_size][_size]);
+void locate_points(Point points[], int length, short field[_size][_size]);
+int copy_field(short src_field[_size][_size], short new_field[_size][_size]);
 
 #endif

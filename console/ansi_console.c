@@ -1,12 +1,12 @@
 #include "board_drawer.h"
 
-void draw_field(short field[SIZE][SIZE])
+void draw_field(short field[_size][_size])
 {
     printf("\033[2J");
 
-    for (int r = 0; r < SIZE; r++)
+    for (int r = 0; r < _size; r++)
     {
-        for (int c = 0; c < SIZE; c++)
+        for (int c = 0; c < _size; c++)
         {
             if (field[r][c])
             {

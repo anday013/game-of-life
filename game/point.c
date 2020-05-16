@@ -9,13 +9,13 @@ int check_point(Point p, int rows, int cols){
 
 Point create_point(int row, int col){
     Point p = {row, col};
-    if(check_point(p, SIZE, SIZE))
+    if(check_point(p, _size, _size))
         return p;
     perror("Point creation failed...");
     exit(0); 
 }
 
-int alive_or_dead(Point p, short field[SIZE][SIZE]){
+int alive_or_dead(Point p, short field[_size][_size]){
     return field[p.row][p.col];
 }
 
@@ -23,7 +23,7 @@ int is_critical(Point p){
     return p.row == LIMIT || p.row == 0 || p.col == LIMIT || p.col == 0;
 }
 
-int live_neighbors(Point p, short field[SIZE][SIZE], int version){
+int live_neighbors(Point p, short field[_size][_size], int version){
     int alive = 0;
     if(is_critical(p)){
         if(version == 1)
@@ -54,7 +54,7 @@ int live_neighbors(Point p, short field[SIZE][SIZE], int version){
 
 
 
-int live_or_die(Point p, short field[SIZE][SIZE], int version){
+int live_or_die(Point p, short field[_size][_size], int version){
     int live_nghbrs = live_neighbors(p, field, version);
     if(field[p.row][p.col])
         return live_nghbrs == 3 || live_nghbrs == 2;  

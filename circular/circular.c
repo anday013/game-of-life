@@ -1,6 +1,6 @@
 #include "circular.h"
 
-int circular_live_neighbors(Point p, short field[SIZE][SIZE]){
+int circular_live_neighbors(Point p, short field[_size][_size]){
     int neighbors[MAX_NEIGHBORS] = {0};
     int alive = 0;
     if(p.row == 0 && p.col != 0 && p.col != LIMIT){

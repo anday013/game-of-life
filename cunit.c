@@ -8,12 +8,12 @@ void test_point_value(void)
     Point A = {0, 0};
     Point B = {10, 50};
     Point C = {20, 10};
-    Point D = {SIZE, SIZE};
+    Point D = {_size, _size};
 
-    CU_ASSERT_TRUE(check_point(A, SIZE, SIZE));
-    CU_ASSERT_FALSE(check_point(B, SIZE, SIZE));
-    CU_ASSERT_FALSE(check_point(C, SIZE, SIZE));
-    CU_ASSERT_FALSE(check_point(D, SIZE, SIZE));
+    CU_ASSERT_TRUE(check_point(A, _size, _size));
+    CU_ASSERT_FALSE(check_point(B, _size, _size));
+    CU_ASSERT_FALSE(check_point(C, _size, _size));
+    CU_ASSERT_FALSE(check_point(D, _size, _size));
 
     CU_ASSERT_EQUAL(create_point(A.row, A.col).row, A.row);
     CU_ASSERT_EQUAL(create_point(A.row, A.col).col, A.col);
@@ -43,7 +43,7 @@ void test_critical_point_neighbors(void)
     Point A = {5, 0};
     Point B = {4, 0};
     Point C = {6, 0};
-    Point D = {5, SIZE};
+    Point D = {5, _size};
 }
 
 int main()

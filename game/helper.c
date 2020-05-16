@@ -1,47 +1,64 @@
 #include "helper.h"
 
+int get_version()
+{
+    printf("Version: (circular - 0, clipped - 1)\n");
+    char version = '0';
+    if(scanf("%c", &version))
+        getchar();
+    else
+        FAIL_IF_MSG(1,"Failed to read integer");
+    
+    FAIL_IF_MSG(version < '0' || version > '1', "Wrong version input");
+    return version - '0';
+}
 
-void argument_checker(int args, char **argv){
-    FAIL_IF_MSG(args < 2,"Wrong arguments. Please check documentation");
-    if(args == 3)
+
+int get_game_type(){
+    printf("\nConsole or SDL: (console - 0, SDL - 1)\n");
+    char game_type = '0';
+    if(scanf("%c", &game_type))
+        getchar();
+    else
+        FAIL_IF_MSG(1,"Failed to read integer");
+    FAIL_IF_MSG(game_type < '0' || game_type > '1', "Wrong game type");
+    return game_type - '0';
+}
+
+int get_stages()
+{
+    int decleared_number_size = 10;
+    char *stages = malloc(sizeof(char) * decleared_number_size);
+    printf("\nNumber of stages: \n");
+     if(scanf("%s", stages))
+        getchar();
+    else
+        FAIL_IF_MSG(1,"Failed to read integer");
+    FAIL_IF_MSG(strlen(stages) > decleared_number_size, "Quite big number");
+    for (int i = 0; i < strlen(stages); i++)
     {
-        char *s_stages = argv[2];
-        for(int i = 0; i < strlen(s_stages); i++){
-            FAIL_IF_MSG(s_stages[i] < '0' && s_stages[i] > '9', "Invalid stages value");
-        }
+        FAIL_IF_MSG(stages[i] < '0' && stages[i] > '9', "Invalid stages value");
     }
-    char *s_version = argv[1];
-    FAIL_IF_MSG((strcmp(s_version, "1") && strcmp(s_version, "2")),"Version can be 1 or 2");
-}
-
-int get_version(int args, char **argv){
-    argument_checker(args, argv);
-    return atoi(argv[1]);
+    return atoi(stages);
 
 }
 
-int get_stages(int args, char **argv){
-    argument_checker(args, argv);
-    if(args == 3)
-        return atoi(argv[2]);
-    return 0;
-}
-
-int copy_field(short src_field[SIZE][SIZE], short new_field[SIZE][SIZE]){
-    for (int r = 0; r < SIZE; r++)
-        for (int c = 0; c < SIZE; c++)
+int copy_field(short src_field[_size][_size], short new_field[_size][_size])
+{
+    for (int r = 0; r < _size; r++)
+        for (int c = 0; c < _size; c++)
             new_field[r][c] = src_field[r][c];
 }
 
-
-void initialize_field(short field[SIZE][SIZE])
+void initialize_field(short field[_size][_size])
 {
-    for (int r = 0; r < SIZE; r++)
-        for (int c = 0; c < SIZE; c++)
+    for (int r = 0; r < _size; r++)
+        for (int c = 0; c < _size; c++)
             field[r][c] = 0;
 }
 
-void locate_points(Point points[], int size, short field[SIZE][SIZE]){
-    for(int i = 0; i < size; i++)
+void locate_points(Point points[], int length, short field[_size][_size])
+{
+    for (int i = 0; i < length; i++)
         change_state(points[i], field);
 }
