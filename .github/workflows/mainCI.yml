@@ -55,7 +55,6 @@ jobs:
           ctest -V
   cover_linux:
     needs: [test_linux]
-            [build_linux]
     runs-on: ubuntu-latest
     steps:
      - uses: actions/checkout@v2
@@ -67,6 +66,13 @@ jobs:
        run: |
         sudo apt update
         sudo apt install libcunit1-dev gcovr libcunit1-dev
+	      hg clone https://hg.libsdl.org/SDL SDL
+        cd SDL
+        mkdir build
+        cd build
+        ../configure
+        make
+        sudo make install
      - name: 'Coverage'
        run: |
            cd BuildCI
