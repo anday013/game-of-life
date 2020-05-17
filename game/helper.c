@@ -48,17 +48,20 @@ int copy_field(short src_field[_size][_size], short new_field[_size][_size])
     for (int r = 0; r < _size; r++)
         for (int c = 0; c < _size; c++)
             new_field[r][c] = src_field[r][c];
+    return 1;
 }
 
-void initialize_field(short field[_size][_size])
+int initialize_field(short field[_size][_size])
 {
     for (int r = 0; r < _size; r++)
         for (int c = 0; c < _size; c++)
             field[r][c] = 0;
+    return 1;
 }
 
-void locate_points(Point points[], int length, short field[_size][_size])
+int locate_points(Point points[], int length, short field[_size][_size])
 {
     for (int i = 0; i < length; i++)
         change_state(points[i], field);
+    return 1;
 }

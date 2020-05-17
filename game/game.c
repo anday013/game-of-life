@@ -1,13 +1,14 @@
 #include "game.h"
 
-void change_state(Point p, short field[_size][_size])
+int change_state(Point p, short field[_size][_size])
 {
     field[p.row][p.col] = !field[p.row][p.col];
+    return 1;
 }
 
 void start_game(int stages, short field[_size][_size], int version)
 {
-    if (stages != 0)
+    if (stages != 0) // Finite stages
         while (stages != 0)
         {
             draw_field(field);
@@ -15,7 +16,7 @@ void start_game(int stages, short field[_size][_size], int version)
             stages--;
             usleep(500000);
         }
-    else
+    else // Infinite stages
         while (1)
         {
             draw_field(field);
@@ -24,13 +25,15 @@ void start_game(int stages, short field[_size][_size], int version)
         }
 }
 
-void kill(Point p, short field[_size][_size])
+int kill(Point p, short field[_size][_size])
 {
     field[p.row][p.col] = 0;
+    return 1;
 }
-void born(Point p, short field[_size][_size])
+int born(Point p, short field[_size][_size])
 {
     field[p.row][p.col] = 1;
+    return 1;
 }
 
 void next_stage(short field[_size][_size], int version)

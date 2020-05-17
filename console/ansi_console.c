@@ -10,11 +10,11 @@ void draw_field(short field[_size][_size])
         {
             if (field[r][c])
             {
-                printf("\e[104m  ");
+                printf("\e[104m  "); // Live cells with blue
             }
             else
             {
-                printf("\e[41m  ");
+                printf("\e[41m  "); // Dead cells with red
             }
         }
         printf("\e[0m");

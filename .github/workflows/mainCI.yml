@@ -19,6 +19,13 @@ jobs:
       run: |
          sudo apt update
          sudo apt install libcunit1-dev
+         hg clone https://hg.libsdl.org/SDL SDL
+         cd SDL
+         mkdir build
+         cd build
+         ../configure
+         make
+         sudo make install
     - name: 'Compile'
       run: |
         mkdir BuildCI
