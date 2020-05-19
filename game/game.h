@@ -4,45 +4,42 @@
 #include "helper.h"
 #include "board_drawer.h"
 
-/*
- * Change state of given Point on a given field
- * Arguments:
- *      p - given point to change
- *      field - game area
- * Return: 1 - success
+/*! \fn int change_state(Point p, short field[_size][_size]);
+ * \brief Change state of given Point on a given field
+ * \param p - given point to change
+ * \param field - game area
+ * \return 1 - success
 */ 
 int change_state(Point p, short field[_size][_size]);
-/*
- * Change state of given Point to 0
- * Arguments:
- *      p - given point to change
- *      field - game area
- * Return: 1 - success
+/*! \fn int kill(Point p, short field[_size][_size]);
+ * \brief Change state of given Point to 0
+ * \param p - given point to change
+ * \param field - game area
+ * \return 1 - success
 */ 
 int kill(Point p, short field[_size][_size]);
-/*
- * Change state of given Point to 1
- * Arguments:
- *      p - given point to change
- *      field - game area
- * Return: 1 - success
+/*! \fn int born(Point p, short field[_size][_size]);
+ * \brief Change state of given Point to 1
+ * \param p - given point to change
+ * \param field - game area
+ * \return 1 - success
 */ 
 int born(Point p, short field[_size][_size]);
-/*
- * Starts the game
- * Arguments:
- *      stages - number of stages
- *      field - game area
- *      version - game version
- * Return: void
+/*!
+ * \fn void start_game(int stages ,short field[_size][_size], int version);
+ * \brief Starts the game
+ * \param stages - number of stages
+ * \param field - game area
+ * \param version - game version
+ * \return void
 */ 
 void start_game(int stages ,short field[_size][_size], int version);
-/*
- * Change field to the next stage
- * Arguments:
- *      field - game area
- *      version - game version
- * Return: void
+/*!
+ * \fn void next_stage(short field[_size][_size], int version);
+ * \brief Change field to the next stage
+ * \param field - game area
+ * \param version - game version
+ * \return void
 */ 
 void next_stage(short field[_size][_size], int version);
 

@@ -1,0 +1,195 @@
+\hypertarget{point_8h}{}\doxysection{game/point.h File Reference}
+\label{point_8h}\index{game/point.h@{game/point.h}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}circular.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}clipped.\+h\char`\"{}}\newline
+\doxysubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_point}{Point}}
+\begin{DoxyCompactList}\small\item\em Game cell on board. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{point_8h_a5977928b042d0a4b2ce93baa979e5f5c}{L\+I\+M\+IT}}~(\mbox{\hyperlink{point_8h_aaa6c8c862a2c0bc18c802314cc58961d}{\+\_\+size}} -\/ 1)
+\item 
+\#define \mbox{\hyperlink{point_8h_a2b1d39159e4114f433745f15a201c93c}{M\+A\+X\+\_\+\+N\+E\+I\+G\+H\+B\+O\+RS}}~8
+\item 
+\#define \mbox{\hyperlink{point_8h_a83456c0fc8874fdb6b0a087933974cfd}{C\+L\+I\+P\+P\+E\+D\+\_\+\+N\+E\+I\+G\+H\+B\+O\+RS}}~5
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_point}{Point}} \mbox{\hyperlink{point_8h_a98dde790df1c3d2027f3a1521a03929c}{create\+\_\+point}} (int row, int col)
+\begin{DoxyCompactList}\small\item\em Create point. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{point_8h_a285b203f7198acae53697dc4ef1166f3}{check\+\_\+point}} (\mbox{\hyperlink{struct_point}{Point}} p, int rows, int cols)
+\begin{DoxyCompactList}\small\item\em Check point. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{point_8h_a2378ad3f21579654301ff430f2f51806}{is\+\_\+critical}} (\mbox{\hyperlink{struct_point}{Point}} p)
+\begin{DoxyCompactList}\small\item\em Check point for critical (on the border) \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{point_8h_a076ba53de2d8962b2d8f2f8a8cf2eaed}{live\+\_\+neighbors}} (\mbox{\hyperlink{struct_point}{Point}} p, short field\mbox{[}\mbox{\hyperlink{point_8h_aaa6c8c862a2c0bc18c802314cc58961d}{\+\_\+size}}\mbox{]}\mbox{[}\mbox{\hyperlink{point_8h_aaa6c8c862a2c0bc18c802314cc58961d}{\+\_\+size}}\mbox{]}, int version)
+\begin{DoxyCompactList}\small\item\em Find live neighbors. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{point_8h_aef6a647e589532f05a6b5c122dce1157}{alive\+\_\+or\+\_\+dead}} (\mbox{\hyperlink{struct_point}{Point}} p, short field\mbox{[}\mbox{\hyperlink{point_8h_aaa6c8c862a2c0bc18c802314cc58961d}{\+\_\+size}}\mbox{]}\mbox{[}\mbox{\hyperlink{point_8h_aaa6c8c862a2c0bc18c802314cc58961d}{\+\_\+size}}\mbox{]})
+\begin{DoxyCompactList}\small\item\em Check point for life. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{point_8h_a2dcc3fc5af62c819c6b78defadf621b2}{live\+\_\+or\+\_\+die}} (\mbox{\hyperlink{struct_point}{Point}} p, short field\mbox{[}\mbox{\hyperlink{point_8h_aaa6c8c862a2c0bc18c802314cc58961d}{\+\_\+size}}\mbox{]}\mbox{[}\mbox{\hyperlink{point_8h_aaa6c8c862a2c0bc18c802314cc58961d}{\+\_\+size}}\mbox{]}, int version)
+\begin{DoxyCompactList}\small\item\em Should point live or die on next day. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{point_8h_aaa6c8c862a2c0bc18c802314cc58961d}{\+\_\+size}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{point_8h_a83456c0fc8874fdb6b0a087933974cfd}\label{point_8h_a83456c0fc8874fdb6b0a087933974cfd}} 
+\index{point.h@{point.h}!CLIPPED\_NEIGHBORS@{CLIPPED\_NEIGHBORS}}
+\index{CLIPPED\_NEIGHBORS@{CLIPPED\_NEIGHBORS}!point.h@{point.h}}
+\doxysubsubsection{\texorpdfstring{CLIPPED\_NEIGHBORS}{CLIPPED\_NEIGHBORS}}
+{\footnotesize\ttfamily \#define C\+L\+I\+P\+P\+E\+D\+\_\+\+N\+E\+I\+G\+H\+B\+O\+RS~5}
+
+\mbox{\Hypertarget{point_8h_a5977928b042d0a4b2ce93baa979e5f5c}\label{point_8h_a5977928b042d0a4b2ce93baa979e5f5c}} 
+\index{point.h@{point.h}!LIMIT@{LIMIT}}
+\index{LIMIT@{LIMIT}!point.h@{point.h}}
+\doxysubsubsection{\texorpdfstring{LIMIT}{LIMIT}}
+{\footnotesize\ttfamily \#define L\+I\+M\+IT~(\mbox{\hyperlink{point_8h_aaa6c8c862a2c0bc18c802314cc58961d}{\+\_\+size}} -\/ 1)}
+
+\mbox{\Hypertarget{point_8h_a2b1d39159e4114f433745f15a201c93c}\label{point_8h_a2b1d39159e4114f433745f15a201c93c}} 
+\index{point.h@{point.h}!MAX\_NEIGHBORS@{MAX\_NEIGHBORS}}
+\index{MAX\_NEIGHBORS@{MAX\_NEIGHBORS}!point.h@{point.h}}
+\doxysubsubsection{\texorpdfstring{MAX\_NEIGHBORS}{MAX\_NEIGHBORS}}
+{\footnotesize\ttfamily \#define M\+A\+X\+\_\+\+N\+E\+I\+G\+H\+B\+O\+RS~8}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{point_8h_aef6a647e589532f05a6b5c122dce1157}\label{point_8h_aef6a647e589532f05a6b5c122dce1157}} 
+\index{point.h@{point.h}!alive\_or\_dead@{alive\_or\_dead}}
+\index{alive\_or\_dead@{alive\_or\_dead}!point.h@{point.h}}
+\doxysubsubsection{\texorpdfstring{alive\_or\_dead()}{alive\_or\_dead()}}
+{\footnotesize\ttfamily int alive\+\_\+or\+\_\+dead (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_point}{Point}}}]{p,  }\item[{short}]{field\mbox{[}\+\_\+size\mbox{]}\mbox{[}\+\_\+size\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Check point for life. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & -\/ point to check \\
+\hline
+{\em field} & -\/ game table \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 -\/ alive 0 -\/ dead 
+\end{DoxyReturn}
+\mbox{\Hypertarget{point_8h_a285b203f7198acae53697dc4ef1166f3}\label{point_8h_a285b203f7198acae53697dc4ef1166f3}} 
+\index{point.h@{point.h}!check\_point@{check\_point}}
+\index{check\_point@{check\_point}!point.h@{point.h}}
+\doxysubsubsection{\texorpdfstring{check\_point()}{check\_point()}}
+{\footnotesize\ttfamily int check\+\_\+point (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_point}{Point}}}]{p,  }\item[{int}]{rows,  }\item[{int}]{cols }\end{DoxyParamCaption})}
+
+
+
+Check point. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & -\/ point to check \\
+\hline
+{\em rows,cols} & -\/ table size \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 -\/ everything OK, otherwise 0 
+\end{DoxyReturn}
+\mbox{\Hypertarget{point_8h_a98dde790df1c3d2027f3a1521a03929c}\label{point_8h_a98dde790df1c3d2027f3a1521a03929c}} 
+\index{point.h@{point.h}!create\_point@{create\_point}}
+\index{create\_point@{create\_point}!point.h@{point.h}}
+\doxysubsubsection{\texorpdfstring{create\_point()}{create\_point()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_point}{Point}} create\+\_\+point (\begin{DoxyParamCaption}\item[{int}]{row,  }\item[{int}]{col }\end{DoxyParamCaption})}
+
+
+
+Create point. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em row} & -\/ point row \\
+\hline
+{\em col} & -\/ point column \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+(\mbox{\hyperlink{struct_point}{Point}} stucture) created point 
+\end{DoxyReturn}
+\mbox{\Hypertarget{point_8h_a2378ad3f21579654301ff430f2f51806}\label{point_8h_a2378ad3f21579654301ff430f2f51806}} 
+\index{point.h@{point.h}!is\_critical@{is\_critical}}
+\index{is\_critical@{is\_critical}!point.h@{point.h}}
+\doxysubsubsection{\texorpdfstring{is\_critical()}{is\_critical()}}
+{\footnotesize\ttfamily int is\+\_\+critical (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_point}{Point}}}]{p }\end{DoxyParamCaption})}
+
+
+
+Check point for critical (on the border) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & -\/ point to check \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 -\/ yes 0 -\/ no 
+\end{DoxyReturn}
+\mbox{\Hypertarget{point_8h_a076ba53de2d8962b2d8f2f8a8cf2eaed}\label{point_8h_a076ba53de2d8962b2d8f2f8a8cf2eaed}} 
+\index{point.h@{point.h}!live\_neighbors@{live\_neighbors}}
+\index{live\_neighbors@{live\_neighbors}!point.h@{point.h}}
+\doxysubsubsection{\texorpdfstring{live\_neighbors()}{live\_neighbors()}}
+{\footnotesize\ttfamily int live\+\_\+neighbors (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_point}{Point}}}]{p,  }\item[{short}]{field\mbox{[}\+\_\+size\mbox{]}\mbox{[}\+\_\+size\mbox{]},  }\item[{int}]{version }\end{DoxyParamCaption})}
+
+
+
+Find live neighbors. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & -\/ point to find \\
+\hline
+{\em field} & -\/ game table \\
+\hline
+{\em version} & -\/ game version \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Number of live neighbors 
+\end{DoxyReturn}
+\mbox{\Hypertarget{point_8h_a2dcc3fc5af62c819c6b78defadf621b2}\label{point_8h_a2dcc3fc5af62c819c6b78defadf621b2}} 
+\index{point.h@{point.h}!live\_or\_die@{live\_or\_die}}
+\index{live\_or\_die@{live\_or\_die}!point.h@{point.h}}
+\doxysubsubsection{\texorpdfstring{live\_or\_die()}{live\_or\_die()}}
+{\footnotesize\ttfamily int live\+\_\+or\+\_\+die (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_point}{Point}}}]{p,  }\item[{short}]{field\mbox{[}\+\_\+size\mbox{]}\mbox{[}\+\_\+size\mbox{]},  }\item[{int}]{version }\end{DoxyParamCaption})}
+
+
+
+Should point live or die on next day. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & -\/ point to check \\
+\hline
+{\em field} & -\/ game table \\
+\hline
+{\em version} & -\/ game version \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 -\/ yes 0 -\/ no 
+\end{DoxyReturn}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{point_8h_aaa6c8c862a2c0bc18c802314cc58961d}\label{point_8h_aaa6c8c862a2c0bc18c802314cc58961d}} 
+\index{point.h@{point.h}!\_size@{\_size}}
+\index{\_size@{\_size}!point.h@{point.h}}
+\doxysubsubsection{\texorpdfstring{\_size}{\_size}}
+{\footnotesize\ttfamily int \+\_\+size}
+

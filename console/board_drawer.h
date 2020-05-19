@@ -2,10 +2,12 @@
 #define _BOARD_H_
 #include "point.h"
 #include "unistd.h"
-/*
- * Draw table on console
- * Return: void
- */
+
+/*! \fn void draw_field(short field[_size][_size])
+ *  \brief Draw table on console
+ *  \param field - game field
+ *  \return void
+ */    
 void draw_field(short field[_size][_size]);
 
 
