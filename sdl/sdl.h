@@ -37,7 +37,7 @@ int get_size(char *object);
  * \param version - game version
  * \return void
 */ 
-void game_run();
+void game_run(SDL_Renderer *renderer, short field[_size][_size], int version);
 /*!
  * \fn void window_reset(SDL_Renderer *renderer, short field[_size][_size]);
  * \brief Clear table and set background to black
@@ -61,6 +61,6 @@ void mouse_listener(SDL_Renderer *renderer, short field[_size][_size], bool isAc
  * \param version - game version
  * \return void
 */ 
-void sdl_run();
+void sdl_run(int version);
 
 #endif

@@ -20,7 +20,7 @@ void main(int args, char **argv)
     if (game_type == 0) // If console version selected
         consoleVersionActions(field, version);
     else
-        sdl_run();
+        sdl_run(version);
     
 }
 
