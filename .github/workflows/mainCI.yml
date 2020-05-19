@@ -3,9 +3,10 @@ name: C - CI
 
 on:
   push:
-    branches: [ master ]
+    branches: [ development ]
   pull_request:
-    branches: [ master ]
+    branches: [ development ]
+    
 
 
 jobs:
@@ -19,6 +20,7 @@ jobs:
       run: |
          sudo apt update
          sudo apt install libcunit1-dev
+         sudo apt install libsdl2-dev
          hg clone https://hg.libsdl.org/SDL SDL
          cd SDL
          mkdir build
@@ -26,6 +28,7 @@ jobs:
          ../configure
          make
          sudo make install
+         sudo apt install doxygen
     - name: 'Compile'
       run: |
         mkdir BuildCI
@@ -45,14 +48,18 @@ jobs:
           name: binaries
           path: BuildCI/
       - name: 'Packages'
-        run: sudo apt update && sudo apt install libcunit1-dev
+        run: |
+          sudo apt update
+          sudo apt install libcunit1-dev
+          sudo apt install libsdl2-dev
+          sudo apt install doxygen
       - name: 'Testing'
         run: |
           cd BuildCI
           chmod +x *
           ctest -V
   cover_linux:
-    needs: [build_linux, test_linux]
+    needs: [test_linux]
     runs-on: ubuntu-latest
     steps:
      - uses: actions/checkout@v2
@@ -62,15 +69,17 @@ jobs:
         path: BuildCI/
      - name: 'Packages'
        run: |
-         sudo apt update
-         sudo apt install gcovr libcunit1-dev
-         hg clone https://hg.libsdl.org/SDL SDL
-         cd SDL
-         mkdir build
-         cd build
-         ../configure
-         make
-         sudo make install 
+        sudo apt update
+        sudo apt install libcunit1-dev gcovr libcunit1-dev
+        sudo apt install libsdl2-dev
+        sudo apt install doxygen
+        hg clone https://hg.libsdl.org/SDL SDL
+        cd SDL
+        mkdir build
+        cd build
+        ../configure
+        make
+        sudo make install
      - name: 'Coverage'
        run: |
            cd BuildCI
@@ -79,4 +88,4 @@ jobs:
      - uses: actions/upload-artifact@v1
        with:
          name: binaries
-         path: BuildCI/
+         path: BuildCI/      
