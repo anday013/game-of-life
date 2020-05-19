@@ -1,0 +1,123 @@
+\hypertarget{game_8h}{}\doxysection{game/game.h File Reference}
+\label{game_8h}\index{game/game.h@{game/game.h}}
+{\ttfamily \#include \char`\"{}point.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}helper.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}board\+\_\+drawer.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{game_8h_a3e2456e4cd899c7e2059de698afab201}{change\+\_\+state}} (\mbox{\hyperlink{struct_point}{Point}} p, short field\mbox{[}\mbox{\hyperlink{point_8h_aaa6c8c862a2c0bc18c802314cc58961d}{\+\_\+size}}\mbox{]}\mbox{[}\mbox{\hyperlink{point_8h_aaa6c8c862a2c0bc18c802314cc58961d}{\+\_\+size}}\mbox{]})
+\begin{DoxyCompactList}\small\item\em Change state of given \mbox{\hyperlink{struct_point}{Point}} on a given field. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{game_8h_ab0546d48aa738127bd6105255bbecdc3}{kill}} (\mbox{\hyperlink{struct_point}{Point}} p, short field\mbox{[}\mbox{\hyperlink{point_8h_aaa6c8c862a2c0bc18c802314cc58961d}{\+\_\+size}}\mbox{]}\mbox{[}\mbox{\hyperlink{point_8h_aaa6c8c862a2c0bc18c802314cc58961d}{\+\_\+size}}\mbox{]})
+\begin{DoxyCompactList}\small\item\em Change state of given \mbox{\hyperlink{struct_point}{Point}} to 0. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{game_8h_aa3c3be75e9b4a68ee4b4862b163988c7}{born}} (\mbox{\hyperlink{struct_point}{Point}} p, short field\mbox{[}\mbox{\hyperlink{point_8h_aaa6c8c862a2c0bc18c802314cc58961d}{\+\_\+size}}\mbox{]}\mbox{[}\mbox{\hyperlink{point_8h_aaa6c8c862a2c0bc18c802314cc58961d}{\+\_\+size}}\mbox{]})
+\begin{DoxyCompactList}\small\item\em Change state of given \mbox{\hyperlink{struct_point}{Point}} to 1. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{game_8h_ade276c05c5e1fe39af28e583cf701948}{start\+\_\+game}} (int stages, short field\mbox{[}\mbox{\hyperlink{point_8h_aaa6c8c862a2c0bc18c802314cc58961d}{\+\_\+size}}\mbox{]}\mbox{[}\mbox{\hyperlink{point_8h_aaa6c8c862a2c0bc18c802314cc58961d}{\+\_\+size}}\mbox{]}, int version)
+\begin{DoxyCompactList}\small\item\em Starts the game. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{game_8h_aa1a3855b7d5fbcdf47e3f974d1a89c4e}{next\+\_\+stage}} (short field\mbox{[}\mbox{\hyperlink{point_8h_aaa6c8c862a2c0bc18c802314cc58961d}{\+\_\+size}}\mbox{]}\mbox{[}\mbox{\hyperlink{point_8h_aaa6c8c862a2c0bc18c802314cc58961d}{\+\_\+size}}\mbox{]}, int version)
+\begin{DoxyCompactList}\small\item\em Change field to the next stage. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{game_8h_aa3c3be75e9b4a68ee4b4862b163988c7}\label{game_8h_aa3c3be75e9b4a68ee4b4862b163988c7}} 
+\index{game.h@{game.h}!born@{born}}
+\index{born@{born}!game.h@{game.h}}
+\doxysubsubsection{\texorpdfstring{born()}{born()}}
+{\footnotesize\ttfamily int born (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_point}{Point}}}]{p,  }\item[{short}]{field\mbox{[}\+\_\+size\mbox{]}\mbox{[}\+\_\+size\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Change state of given \mbox{\hyperlink{struct_point}{Point}} to 1. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & -\/ given point to change \\
+\hline
+{\em field} & -\/ game area \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 -\/ success 
+\end{DoxyReturn}
+\mbox{\Hypertarget{game_8h_a3e2456e4cd899c7e2059de698afab201}\label{game_8h_a3e2456e4cd899c7e2059de698afab201}} 
+\index{game.h@{game.h}!change\_state@{change\_state}}
+\index{change\_state@{change\_state}!game.h@{game.h}}
+\doxysubsubsection{\texorpdfstring{change\_state()}{change\_state()}}
+{\footnotesize\ttfamily int change\+\_\+state (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_point}{Point}}}]{p,  }\item[{short}]{field\mbox{[}\+\_\+size\mbox{]}\mbox{[}\+\_\+size\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Change state of given \mbox{\hyperlink{struct_point}{Point}} on a given field. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & -\/ given point to change \\
+\hline
+{\em field} & -\/ game area \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 -\/ success 
+\end{DoxyReturn}
+\mbox{\Hypertarget{game_8h_ab0546d48aa738127bd6105255bbecdc3}\label{game_8h_ab0546d48aa738127bd6105255bbecdc3}} 
+\index{game.h@{game.h}!kill@{kill}}
+\index{kill@{kill}!game.h@{game.h}}
+\doxysubsubsection{\texorpdfstring{kill()}{kill()}}
+{\footnotesize\ttfamily int kill (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_point}{Point}}}]{p,  }\item[{short}]{field\mbox{[}\+\_\+size\mbox{]}\mbox{[}\+\_\+size\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Change state of given \mbox{\hyperlink{struct_point}{Point}} to 0. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & -\/ given point to change \\
+\hline
+{\em field} & -\/ game area \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 -\/ success 
+\end{DoxyReturn}
+\mbox{\Hypertarget{game_8h_aa1a3855b7d5fbcdf47e3f974d1a89c4e}\label{game_8h_aa1a3855b7d5fbcdf47e3f974d1a89c4e}} 
+\index{game.h@{game.h}!next\_stage@{next\_stage}}
+\index{next\_stage@{next\_stage}!game.h@{game.h}}
+\doxysubsubsection{\texorpdfstring{next\_stage()}{next\_stage()}}
+{\footnotesize\ttfamily void next\+\_\+stage (\begin{DoxyParamCaption}\item[{short}]{field\mbox{[}\+\_\+size\mbox{]}\mbox{[}\+\_\+size\mbox{]},  }\item[{int}]{version }\end{DoxyParamCaption})}
+
+
+
+Change field to the next stage. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em field} & -\/ game area \\
+\hline
+{\em version} & -\/ game version \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\mbox{\Hypertarget{game_8h_ade276c05c5e1fe39af28e583cf701948}\label{game_8h_ade276c05c5e1fe39af28e583cf701948}} 
+\index{game.h@{game.h}!start\_game@{start\_game}}
+\index{start\_game@{start\_game}!game.h@{game.h}}
+\doxysubsubsection{\texorpdfstring{start\_game()}{start\_game()}}
+{\footnotesize\ttfamily void start\+\_\+game (\begin{DoxyParamCaption}\item[{int}]{stages,  }\item[{short}]{field\mbox{[}\+\_\+size\mbox{]}\mbox{[}\+\_\+size\mbox{]},  }\item[{int}]{version }\end{DoxyParamCaption})}
+
+
+
+Starts the game. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em stages} & -\/ number of stages \\
+\hline
+{\em field} & -\/ game area \\
+\hline
+{\em version} & -\/ game version \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}

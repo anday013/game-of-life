@@ -1,0 +1,136 @@
+\hypertarget{helper_8h}{}\doxysection{game/helper.h File Reference}
+\label{helper_8h}\index{game/helper.h@{game/helper.h}}
+{\ttfamily \#include \char`\"{}point.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}game.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{helper_8h_aef4e6f3898448a00934abe0f3bda243d}{F\+A\+I\+L\+\_\+\+I\+F\+\_\+\+M\+SG}}(E\+XP,  M\+SG)~(\{if(E\+XP)\{printf(M\+SG \char`\"{}\textbackslash{}n\char`\"{}); exit(E\+X\+I\+T\+\_\+\+F\+A\+I\+L\+U\+RE);\} \})
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{helper_8h_a72a94e07cb0dc6079d449302475d507b}{get\+\_\+game\+\_\+type}} ()
+\begin{DoxyCompactList}\small\item\em Get game type from player (sdl or console) \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{helper_8h_a1cf774ee1bca13759769c270ad4e51d1}{get\+\_\+version}} ()
+\begin{DoxyCompactList}\small\item\em Get game version from player (clipped or circular) \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{helper_8h_a2f4f5f1e5266328cc6bf7275de042b97}{get\+\_\+stages}} ()
+\begin{DoxyCompactList}\small\item\em Get number of stages in console game. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{helper_8h_a919e32da6ef96788e172f998f5946684}{initialize\+\_\+field}} (short field\mbox{[}\mbox{\hyperlink{point_8h_aaa6c8c862a2c0bc18c802314cc58961d}{\+\_\+size}}\mbox{]}\mbox{[}\mbox{\hyperlink{point_8h_aaa6c8c862a2c0bc18c802314cc58961d}{\+\_\+size}}\mbox{]})
+\begin{DoxyCompactList}\small\item\em Set all table cells to 0. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{helper_8h_a88e37742065ae95a73f2d4427917af72}{locate\+\_\+points}} (\mbox{\hyperlink{struct_point}{Point}} points\mbox{[}$\,$\mbox{]}, int length, short field\mbox{[}\mbox{\hyperlink{point_8h_aaa6c8c862a2c0bc18c802314cc58961d}{\+\_\+size}}\mbox{]}\mbox{[}\mbox{\hyperlink{point_8h_aaa6c8c862a2c0bc18c802314cc58961d}{\+\_\+size}}\mbox{]})
+\begin{DoxyCompactList}\small\item\em Locate inital alive point on table. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{helper_8h_a6f2952f82eb3b27747fafd3ae2b1432a}{copy\+\_\+field}} (short src\+\_\+field\mbox{[}\mbox{\hyperlink{point_8h_aaa6c8c862a2c0bc18c802314cc58961d}{\+\_\+size}}\mbox{]}\mbox{[}\mbox{\hyperlink{point_8h_aaa6c8c862a2c0bc18c802314cc58961d}{\+\_\+size}}\mbox{]}, short new\+\_\+field\mbox{[}\mbox{\hyperlink{point_8h_aaa6c8c862a2c0bc18c802314cc58961d}{\+\_\+size}}\mbox{]}\mbox{[}\mbox{\hyperlink{point_8h_aaa6c8c862a2c0bc18c802314cc58961d}{\+\_\+size}}\mbox{]})
+\begin{DoxyCompactList}\small\item\em Copy 2d arrays. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{helper_8h_aef4e6f3898448a00934abe0f3bda243d}\label{helper_8h_aef4e6f3898448a00934abe0f3bda243d}} 
+\index{helper.h@{helper.h}!FAIL\_IF\_MSG@{FAIL\_IF\_MSG}}
+\index{FAIL\_IF\_MSG@{FAIL\_IF\_MSG}!helper.h@{helper.h}}
+\doxysubsubsection{\texorpdfstring{FAIL\_IF\_MSG}{FAIL\_IF\_MSG}}
+{\footnotesize\ttfamily \#define F\+A\+I\+L\+\_\+\+I\+F\+\_\+\+M\+SG(\begin{DoxyParamCaption}\item[{}]{E\+XP,  }\item[{}]{M\+SG }\end{DoxyParamCaption})~(\{if(E\+XP)\{printf(M\+SG \char`\"{}\textbackslash{}n\char`\"{}); exit(E\+X\+I\+T\+\_\+\+F\+A\+I\+L\+U\+RE);\} \})}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{helper_8h_a6f2952f82eb3b27747fafd3ae2b1432a}\label{helper_8h_a6f2952f82eb3b27747fafd3ae2b1432a}} 
+\index{helper.h@{helper.h}!copy\_field@{copy\_field}}
+\index{copy\_field@{copy\_field}!helper.h@{helper.h}}
+\doxysubsubsection{\texorpdfstring{copy\_field()}{copy\_field()}}
+{\footnotesize\ttfamily int copy\+\_\+field (\begin{DoxyParamCaption}\item[{short}]{src\+\_\+field\mbox{[}\+\_\+size\mbox{]}\mbox{[}\+\_\+size\mbox{]},  }\item[{short}]{new\+\_\+field\mbox{[}\+\_\+size\mbox{]}\mbox{[}\+\_\+size\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Copy 2d arrays. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em src\+\_\+field} & a source array \\
+\hline
+{\em new\+\_\+field} & a new array \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 -\/ success 
+\end{DoxyReturn}
+\mbox{\Hypertarget{helper_8h_a72a94e07cb0dc6079d449302475d507b}\label{helper_8h_a72a94e07cb0dc6079d449302475d507b}} 
+\index{helper.h@{helper.h}!get\_game\_type@{get\_game\_type}}
+\index{get\_game\_type@{get\_game\_type}!helper.h@{helper.h}}
+\doxysubsubsection{\texorpdfstring{get\_game\_type()}{get\_game\_type()}}
+{\footnotesize\ttfamily int get\+\_\+game\+\_\+type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get game type from player (sdl or console) 
+
+\begin{DoxyReturn}{Returns}
+0 -\/ console , 1 -\/ S\+DL 
+\end{DoxyReturn}
+\mbox{\Hypertarget{helper_8h_a2f4f5f1e5266328cc6bf7275de042b97}\label{helper_8h_a2f4f5f1e5266328cc6bf7275de042b97}} 
+\index{helper.h@{helper.h}!get\_stages@{get\_stages}}
+\index{get\_stages@{get\_stages}!helper.h@{helper.h}}
+\doxysubsubsection{\texorpdfstring{get\_stages()}{get\_stages()}}
+{\footnotesize\ttfamily int get\+\_\+stages (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get number of stages in console game. 
+
+\begin{DoxyReturn}{Returns}
+number of stages 
+\end{DoxyReturn}
+\mbox{\Hypertarget{helper_8h_a1cf774ee1bca13759769c270ad4e51d1}\label{helper_8h_a1cf774ee1bca13759769c270ad4e51d1}} 
+\index{helper.h@{helper.h}!get\_version@{get\_version}}
+\index{get\_version@{get\_version}!helper.h@{helper.h}}
+\doxysubsubsection{\texorpdfstring{get\_version()}{get\_version()}}
+{\footnotesize\ttfamily int get\+\_\+version (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get game version from player (clipped or circular) 
+
+\begin{DoxyReturn}{Returns}
+0 -\/ circular , 1 -\/ clipped 
+\end{DoxyReturn}
+\mbox{\Hypertarget{helper_8h_a919e32da6ef96788e172f998f5946684}\label{helper_8h_a919e32da6ef96788e172f998f5946684}} 
+\index{helper.h@{helper.h}!initialize\_field@{initialize\_field}}
+\index{initialize\_field@{initialize\_field}!helper.h@{helper.h}}
+\doxysubsubsection{\texorpdfstring{initialize\_field()}{initialize\_field()}}
+{\footnotesize\ttfamily int initialize\+\_\+field (\begin{DoxyParamCaption}\item[{short}]{field\mbox{[}\+\_\+size\mbox{]}\mbox{[}\+\_\+size\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Set all table cells to 0. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em field} & the game field \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 -\/ success 
+\end{DoxyReturn}
+\mbox{\Hypertarget{helper_8h_a88e37742065ae95a73f2d4427917af72}\label{helper_8h_a88e37742065ae95a73f2d4427917af72}} 
+\index{helper.h@{helper.h}!locate\_points@{locate\_points}}
+\index{locate\_points@{locate\_points}!helper.h@{helper.h}}
+\doxysubsubsection{\texorpdfstring{locate\_points()}{locate\_points()}}
+{\footnotesize\ttfamily int locate\+\_\+points (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_point}{Point}}}]{points\mbox{[}$\,$\mbox{]},  }\item[{int}]{length,  }\item[{short}]{field\mbox{[}\+\_\+size\mbox{]}\mbox{[}\+\_\+size\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Locate inital alive point on table. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em points} & a set of point to locate \\
+\hline
+{\em length} & a size of points array \\
+\hline
+{\em field} & the game field \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 -\/ success 
+\end{DoxyReturn}

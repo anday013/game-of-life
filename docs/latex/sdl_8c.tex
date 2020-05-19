@@ -1,0 +1,113 @@
+\hypertarget{sdl_8c}{}\doxysection{sdl/sdl.c File Reference}
+\label{sdl_8c}\index{sdl/sdl.c@{sdl/sdl.c}}
+{\ttfamily \#include \char`\"{}sdl.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{sdl_8c_aa106683197555936dbb65b82d594245d}{draw}} (S\+D\+L\+\_\+\+Renderer $\ast$renderer, short field\mbox{[}\mbox{\hyperlink{point_8h_aaa6c8c862a2c0bc18c802314cc58961d}{\+\_\+size}}\mbox{]}\mbox{[}\mbox{\hyperlink{point_8h_aaa6c8c862a2c0bc18c802314cc58961d}{\+\_\+size}}\mbox{]})
+\begin{DoxyCompactList}\small\item\em Draw table on window. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{sdl_8c_a6ebc91880de90c14eeab57706135d81b}{mouse\+\_\+listener}} (S\+D\+L\+\_\+\+Renderer $\ast$renderer, short field\mbox{[}\mbox{\hyperlink{point_8h_aaa6c8c862a2c0bc18c802314cc58961d}{\+\_\+size}}\mbox{]}\mbox{[}\mbox{\hyperlink{point_8h_aaa6c8c862a2c0bc18c802314cc58961d}{\+\_\+size}}\mbox{]}, bool is\+Active)
+\begin{DoxyCompactList}\small\item\em Stands for mouse actions. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{sdl_8c_a4a0fbb6f2a39c7bd805671ddbcfc2687}{get\+\_\+size}} (char $\ast$object)
+\begin{DoxyCompactList}\small\item\em Get size from user. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{sdl_8c_a9a7ebda698d0d815aace45bfd31c6fb6}{window\+\_\+reset}} (S\+D\+L\+\_\+\+Renderer $\ast$renderer, short field\mbox{[}\mbox{\hyperlink{point_8h_aaa6c8c862a2c0bc18c802314cc58961d}{\+\_\+size}}\mbox{]}\mbox{[}\mbox{\hyperlink{point_8h_aaa6c8c862a2c0bc18c802314cc58961d}{\+\_\+size}}\mbox{]})
+\begin{DoxyCompactList}\small\item\em Clear table and set background to black. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{sdl_8c_aa7ec67a5cfa4ff5058c7c1ed7ecf7c06}{game\+\_\+run}} (S\+D\+L\+\_\+\+Renderer $\ast$renderer, short field\mbox{[}\mbox{\hyperlink{point_8h_aaa6c8c862a2c0bc18c802314cc58961d}{\+\_\+size}}\mbox{]}\mbox{[}\mbox{\hyperlink{point_8h_aaa6c8c862a2c0bc18c802314cc58961d}{\+\_\+size}}\mbox{]}, int version)
+\item 
+void \mbox{\hyperlink{sdl_8c_ac38d7bbc249c508f001f132d5b6b7df6}{sdl\+\_\+run}} (int version)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{sdl_8c_aa106683197555936dbb65b82d594245d}\label{sdl_8c_aa106683197555936dbb65b82d594245d}} 
+\index{sdl.c@{sdl.c}!draw@{draw}}
+\index{draw@{draw}!sdl.c@{sdl.c}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily void draw (\begin{DoxyParamCaption}\item[{S\+D\+L\+\_\+\+Renderer $\ast$}]{renderer,  }\item[{short}]{field\mbox{[}\+\_\+size\mbox{]}\mbox{[}\+\_\+size\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Draw table on window. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em renderer} & -\/ sdl renderer \\
+\hline
+{\em field} & -\/ game table \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\mbox{\Hypertarget{sdl_8c_aa7ec67a5cfa4ff5058c7c1ed7ecf7c06}\label{sdl_8c_aa7ec67a5cfa4ff5058c7c1ed7ecf7c06}} 
+\index{sdl.c@{sdl.c}!game\_run@{game\_run}}
+\index{game\_run@{game\_run}!sdl.c@{sdl.c}}
+\doxysubsubsection{\texorpdfstring{game\_run()}{game\_run()}}
+{\footnotesize\ttfamily void game\+\_\+run (\begin{DoxyParamCaption}\item[{S\+D\+L\+\_\+\+Renderer $\ast$}]{renderer,  }\item[{short}]{field\mbox{[}\+\_\+size\mbox{]}\mbox{[}\+\_\+size\mbox{]},  }\item[{int}]{version }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{sdl_8c_a4a0fbb6f2a39c7bd805671ddbcfc2687}\label{sdl_8c_a4a0fbb6f2a39c7bd805671ddbcfc2687}} 
+\index{sdl.c@{sdl.c}!get\_size@{get\_size}}
+\index{get\_size@{get\_size}!sdl.c@{sdl.c}}
+\doxysubsubsection{\texorpdfstring{get\_size()}{get\_size()}}
+{\footnotesize\ttfamily int get\+\_\+size (\begin{DoxyParamCaption}\item[{char $\ast$}]{object }\end{DoxyParamCaption})}
+
+
+
+Get size from user. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em object} & -\/ name of object \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+(int) size 
+\end{DoxyReturn}
+\mbox{\Hypertarget{sdl_8c_a6ebc91880de90c14eeab57706135d81b}\label{sdl_8c_a6ebc91880de90c14eeab57706135d81b}} 
+\index{sdl.c@{sdl.c}!mouse\_listener@{mouse\_listener}}
+\index{mouse\_listener@{mouse\_listener}!sdl.c@{sdl.c}}
+\doxysubsubsection{\texorpdfstring{mouse\_listener()}{mouse\_listener()}}
+{\footnotesize\ttfamily void mouse\+\_\+listener (\begin{DoxyParamCaption}\item[{S\+D\+L\+\_\+\+Renderer $\ast$}]{renderer,  }\item[{short}]{field\mbox{[}\+\_\+size\mbox{]}\mbox{[}\+\_\+size\mbox{]},  }\item[{bool}]{is\+Active }\end{DoxyParamCaption})}
+
+
+
+Stands for mouse actions. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em renderer} & -\/ sdl renderer \\
+\hline
+{\em field} & -\/ game table \\
+\hline
+{\em is\+Active} & -\/ should work \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\mbox{\Hypertarget{sdl_8c_ac38d7bbc249c508f001f132d5b6b7df6}\label{sdl_8c_ac38d7bbc249c508f001f132d5b6b7df6}} 
+\index{sdl.c@{sdl.c}!sdl\_run@{sdl\_run}}
+\index{sdl\_run@{sdl\_run}!sdl.c@{sdl.c}}
+\doxysubsubsection{\texorpdfstring{sdl\_run()}{sdl\_run()}}
+{\footnotesize\ttfamily void sdl\+\_\+run (\begin{DoxyParamCaption}\item[{int}]{version }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{sdl_8c_a9a7ebda698d0d815aace45bfd31c6fb6}\label{sdl_8c_a9a7ebda698d0d815aace45bfd31c6fb6}} 
+\index{sdl.c@{sdl.c}!window\_reset@{window\_reset}}
+\index{window\_reset@{window\_reset}!sdl.c@{sdl.c}}
+\doxysubsubsection{\texorpdfstring{window\_reset()}{window\_reset()}}
+{\footnotesize\ttfamily void window\+\_\+reset (\begin{DoxyParamCaption}\item[{S\+D\+L\+\_\+\+Renderer $\ast$}]{renderer,  }\item[{short}]{field\mbox{[}\+\_\+size\mbox{]}\mbox{[}\+\_\+size\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Clear table and set background to black. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em renderer} & -\/ sdl renderer \\
+\hline
+{\em field} & -\/ game table \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}

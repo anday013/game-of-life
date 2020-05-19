@@ -1,0 +1,48 @@
+\hypertarget{_c_make_lists_8txt}{}\doxysection{C\+Make\+Lists.\+txt File Reference}
+\label{_c_make_lists_8txt}\index{CMakeLists.txt@{CMakeLists.txt}}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_c_make_lists_8txt_ae9cc88677dfdea80b992a919c520b55d}{cmake\+\_\+minimum\+\_\+required}} (V\+E\+R\+S\+I\+ON 3.\+10.\+2) cmake\+\_\+policy(S\+ET C\+M\+P0076 N\+EW) project(Game\+\_\+\+Of\+\_\+\+Life L\+A\+N\+G\+U\+A\+G\+ES C) add\+\_\+subdirectory(game) add\+\_\+subdirectory(console) add\+\_\+subdirectory(circular) add\+\_\+subdirectory(clipped) add\+\_\+subdirectory(sdl) add\+\_\+executable(\$
+\item 
+\mbox{\hyperlink{main_8c_a9a8bc6968ec6a7634878fa62d7c6a82d}{main}} c \mbox{\hyperlink{_c_make_lists_8txt_a135bd44d5bbc46d163fe339801090ac4}{target\+\_\+link\+\_\+libraries}} (\$\{P\+R\+O\+J\+E\+C\+T\+\_\+\+N\+A\+ME\} P\+U\+B\+L\+IC game console circular clipped sdl) set(P\+R\+O\+J\+E\+C\+T\+\_\+\+T\+E\+ST test\+\_\+gol) add\+\_\+executable(\$
+\item 
+\mbox{\hyperlink{_c_make_lists_8txt_aeebeaee47def26d3c85d135fc622a307}{target\+\_\+sources}} (\$\{P\+R\+O\+J\+E\+C\+T\+\_\+\+T\+E\+ST\} P\+U\+B\+L\+IC cunit.\+c) \mbox{\hyperlink{_c_make_lists_8txt_a135bd44d5bbc46d163fe339801090ac4}{target\+\_\+link\+\_\+libraries}}(\$
+\item 
+P\+U\+B\+L\+IC game cunit \mbox{\hyperlink{_c_make_lists_8txt_a14542ad4b10e3ed639638d394968953b}{enable\+\_\+testing}} () add\+\_\+test(N\+A\+ME \char`\"{}Cunit\+Test\char`\"{} C\+O\+M\+M\+A\+ND \$
+\item 
+\mbox{\hyperlink{_c_make_lists_8txt_a77ae62c879d206415c8373bfed0debf5}{add\+\_\+custom\+\_\+target}} (cover C\+O\+M\+M\+A\+ND cmake -\/-\/build . -\/-\/target test C\+O\+M\+M\+A\+ND gcovr -\/r \$\{C\+M\+A\+K\+E\+\_\+\+S\+O\+U\+R\+C\+E\+\_\+\+D\+IR\} \$\{C\+M\+A\+K\+E\+\_\+\+B\+I\+N\+A\+R\+Y\+\_\+\+D\+IR\} \$$<$ T\+A\+R\+G\+E\+T\+\_\+\+F\+I\+L\+E\+:\$\{P\+R\+O\+J\+E\+C\+T\+\_\+\+T\+E\+ST\}$>$ W\+O\+R\+K\+I\+N\+G\+\_\+\+D\+I\+R\+E\+C\+T\+O\+RY \$\{C\+M\+A\+K\+E\+\_\+\+B\+I\+N\+A\+R\+Y\+\_\+\+D\+IR\}) add\+\_\+custom\+\_\+target(cover\+\_\+html C\+O\+M\+M\+A\+ND cmake -\/-\/build . -\/-\/target test C\+O\+M\+M\+A\+ND gcovr -\/-\/html -\/-\/html-\/detail -\/o index.\+html -\/r \$
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{_c_make_lists_8txt_a77ae62c879d206415c8373bfed0debf5}\label{_c_make_lists_8txt_a77ae62c879d206415c8373bfed0debf5}} 
+\index{CMakeLists.txt@{CMakeLists.txt}!add\_custom\_target@{add\_custom\_target}}
+\index{add\_custom\_target@{add\_custom\_target}!CMakeLists.txt@{CMakeLists.txt}}
+\doxysubsubsection{\texorpdfstring{add\_custom\_target()}{add\_custom\_target()}}
+{\footnotesize\ttfamily add\+\_\+custom\+\_\+target (\begin{DoxyParamCaption}\item[{cover C\+O\+M\+M\+A\+ND cmake -\/-\/build . -\/-\/target test C\+O\+M\+M\+A\+ND gcovr -\/r \$\{C\+M\+A\+K\+E\+\_\+\+S\+O\+U\+R\+C\+E\+\_\+\+D\+IR\} \$\{C\+M\+A\+K\+E\+\_\+\+B\+I\+N\+A\+R\+Y\+\_\+\+D\+IR\} \$$<$ T\+A\+R\+G\+E\+T\+\_\+\+F\+I\+L\+E\+:\$\{P\+R\+O\+J\+E\+C\+T\+\_\+\+T\+E\+ST\}$>$ W\+O\+R\+K\+I\+N\+G\+\_\+\+D\+I\+R\+E\+C\+T\+O\+RY \$\{C\+M\+A\+K\+E\+\_\+\+B\+I\+N\+A\+R\+Y\+\_\+\+D\+IR\}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{_c_make_lists_8txt_ae9cc88677dfdea80b992a919c520b55d}\label{_c_make_lists_8txt_ae9cc88677dfdea80b992a919c520b55d}} 
+\index{CMakeLists.txt@{CMakeLists.txt}!cmake\_minimum\_required@{cmake\_minimum\_required}}
+\index{cmake\_minimum\_required@{cmake\_minimum\_required}!CMakeLists.txt@{CMakeLists.txt}}
+\doxysubsubsection{\texorpdfstring{cmake\_minimum\_required()}{cmake\_minimum\_required()}}
+{\footnotesize\ttfamily cmake\+\_\+minimum\+\_\+required (\begin{DoxyParamCaption}\item[{V\+E\+R\+S\+I\+ON 3.\+10.}]{2 }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{_c_make_lists_8txt_a14542ad4b10e3ed639638d394968953b}\label{_c_make_lists_8txt_a14542ad4b10e3ed639638d394968953b}} 
+\index{CMakeLists.txt@{CMakeLists.txt}!enable\_testing@{enable\_testing}}
+\index{enable\_testing@{enable\_testing}!CMakeLists.txt@{CMakeLists.txt}}
+\doxysubsubsection{\texorpdfstring{enable\_testing()}{enable\_testing()}}
+{\footnotesize\ttfamily P\+U\+B\+L\+IC game cunit enable\+\_\+testing (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{_c_make_lists_8txt_a135bd44d5bbc46d163fe339801090ac4}\label{_c_make_lists_8txt_a135bd44d5bbc46d163fe339801090ac4}} 
+\index{CMakeLists.txt@{CMakeLists.txt}!target\_link\_libraries@{target\_link\_libraries}}
+\index{target\_link\_libraries@{target\_link\_libraries}!CMakeLists.txt@{CMakeLists.txt}}
+\doxysubsubsection{\texorpdfstring{target\_link\_libraries()}{target\_link\_libraries()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{main_8c_a9a8bc6968ec6a7634878fa62d7c6a82d}{main}} c target\+\_\+link\+\_\+libraries (\begin{DoxyParamCaption}\item[{}]{\$\{\+P\+R\+O\+J\+E\+C\+T\+\_\+\+N\+A\+M\+E\} P\+U\+B\+L\+I\+C game console circular clipped }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{_c_make_lists_8txt_aeebeaee47def26d3c85d135fc622a307}\label{_c_make_lists_8txt_aeebeaee47def26d3c85d135fc622a307}} 
+\index{CMakeLists.txt@{CMakeLists.txt}!target\_sources@{target\_sources}}
+\index{target\_sources@{target\_sources}!CMakeLists.txt@{CMakeLists.txt}}
+\doxysubsubsection{\texorpdfstring{target\_sources()}{target\_sources()}}
+{\footnotesize\ttfamily target\+\_\+sources (\begin{DoxyParamCaption}\item[{}]{\$\{\+P\+R\+O\+J\+E\+C\+T\+\_\+\+T\+E\+S\+T\} P\+U\+B\+L\+I\+C cunit. }\end{DoxyParamCaption})}
+

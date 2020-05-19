@@ -14,52 +14,52 @@
 #include "point.h"
 int _window_size; // Global window size variable
 #define SCALE _window_size / _size // Relation between window size and table size
-/*
- * Draw table on window
- * Argument: 
- * 		renderer - sdl renderer
- * 		field - game table
- * Return: void
+/*!
+ * \fn void draw(SDL_Renderer *renderer, short field[_size][_size]);
+ * \brief Draw table on window
+ * \param renderer - sdl renderer
+ * \param field - game table
+ * \return void
 */ 
 void draw(SDL_Renderer *renderer, short field[_size][_size]);
-/*
- * Get size from user
- * Argument: 
- * 		object - name of object
- * Return: (int) size
+/*!
+ * \fn int get_size(char *object);
+ * \brief Get size from user
+ * \param object - name of object
+ * \return (int) size
 */ 
 int get_size(char *object);
-/*
- * game start
- * Argument: 
- * 		renderer - sdl renderer
- * 		field - game table
- * 		version - game version
- * Return: void
+/*!
+ * \fn void game_run();
+ * \brief game start
+ * \param renderer - sdl renderer
+ * \param field - game table
+ * \param version - game version
+ * \return void
 */ 
 void game_run();
-/*
- * Clear table and set background to black
- * Argument: 
- * 		renderer - sdl renderer
- * 		field - game table
- * Return: void
+/*!
+ * \fn void window_reset(SDL_Renderer *renderer, short field[_size][_size]);
+ * \brief Clear table and set background to black
+ * \param renderer - sdl renderer
+ * \param field - game table
+ * \return void
 */ 
 void window_reset(SDL_Renderer *renderer, short field[_size][_size]);
-/*
- * Stands for mouse actions
- * Argument: 
- * 		renderer - sdl renderer
- * 		field - game table
- * 		isActive - should work
- * Return: void
+/*!
+ * \fn void mouse_listener(SDL_Renderer *renderer, short field[_size][_size], bool isActive);
+ * \brief Stands for mouse actions
+ * \param renderer - sdl renderer
+ * \param field - game table
+ * \param isActive - should work
+ * \return void
 */ 
 void mouse_listener(SDL_Renderer *renderer, short field[_size][_size], bool isActive);
-/*
- * Sdl entry point
- * Argument: 
- * 		version - game version
- * Return: void
+/*!
+ * \fn
+ * \brief Sdl entry point
+ * \param version - game version
+ * \return void
 */ 
 void sdl_run();
 
