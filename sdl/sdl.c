@@ -80,7 +80,7 @@ void sdl_run(int version)
 	_size = get_size("Field (Number of cells in a row)"); // Array size
 	_window_size = get_size("Window (px)");
 	FAIL_IF_MSG(_size > _window_size, "Error: Field (Table) size is bigger than Window size");
-	printf("\nENTER - start game\nSPACE - pause game\nESC - restart game\n");
+	printf("\nENTER - start game\nSPACE - pause game\nESC - restart game \n");
 	short field[_size][_size];
 	initialize_field(field);
 	if (SDL_Init(SDL_INIT_VIDEO) != 0)
